@@ -20,6 +20,10 @@ trienode *createnode(){
   return newnode;
 }
 
+bool trieInsert(trienode **root, char *signedtext){
+  
+}
+
 void main(void){
   
   
