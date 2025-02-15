@@ -21,7 +21,21 @@ trienode *createnode(){
 }
 
 bool trieInsert(trienode **root, char *signedtext){
-  
+  if(*root == NULL){
+    *root = createnode();
+  }
+
+  unisgned char *text = (unsigned char *)signedtext;
+  trienode *tmp = *root;
+
+  int length = strlen(signedtext);
+
+  for(int i = 0; i < length; i++){
+    if(tmp->children[text[i]] == NULL){
+      /* Create new node */
+      tmp->children[text[i]] = createnode();
+    }
+  }
 }
 
 void main(void){
